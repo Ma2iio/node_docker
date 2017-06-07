@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+
+            
+### Nginx Server Container ##################################
+    nginx:
+        container_name: node
+        build:
+            context: ./node
+        volumes_from:
+            - volumes_source
+        ports:
+            - "80:80"
+        links:
+            - volumes_source
+
+### Application Code Container ######################
+
+    volumes_source:
+        image: tianon/true
+        volumes:
+            - ./workspace/:/var/www/html
