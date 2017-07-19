@@ -1,10 +1,7 @@
 version: '2'
 
 services:
-
-            
-### Nginx Server Container ##################################
-    nginx:
+    node:
         container_name: node
         build:
             context: ./node
